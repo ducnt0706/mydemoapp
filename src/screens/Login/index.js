@@ -84,8 +84,7 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.rootContainer}>
-      <View>
+      <View style={styles.rootContainer}>
         <Image
           style={styles.logo}
           width={190}
@@ -169,7 +168,6 @@ const Login = ({ navigation }) => {
           </View>
         </Modal>
       </View>
-    </SafeAreaView>
   );
 };
 

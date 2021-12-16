@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, StatusBar } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { colors } from './constants/styles';
-import { getStorage } from './helpers';
+import React, {useEffect, useState} from 'react';
+import {ActivityIndicator, StatusBar, Text, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {colors} from './constants/styles';
+import {getStorage} from './helpers';
 import Navigation from './navigations';
-
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -28,15 +27,16 @@ const App = () => {
   };
 
   return (
-    <SafeAreaProvider>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar barStyle="dark-content" translucent hidden={!isLogin} />
       {appLoading ? (
-        <ActivityIndicator size="large" color={colors.loading} />
+        <View style={{flex: 1, justifyContent:'center'}} >
+          <ActivityIndicator  size="large" color={colors.loading} />
+        </View>
       ) : (
         <Navigation initialRouteName={isLogin ? 'Home' : 'Login'} />
       )}
-    </SafeAreaProvider>
-
+    </SafeAreaView>
   );
 };
 

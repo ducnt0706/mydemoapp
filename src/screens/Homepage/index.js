@@ -7,6 +7,7 @@ import {
   View
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Button from '../../components/Button';
 import Card from '../../components/Card';
 import Spacing from '../../components/Spacing';
 import Typography from '../../components/Typography';
@@ -141,8 +142,7 @@ const Homepage = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView style={styles.container}>
         <Spacing height={20} />
         <Typography
           label="Assessments"
@@ -187,7 +187,6 @@ const Homepage = ({ navigation }) => {
         </View> */}
         <Spacing height={20} />
       </ScrollView>
-    </SafeAreaView>
   );
 };
 
